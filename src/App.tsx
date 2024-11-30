@@ -1,13 +1,12 @@
 // in src/App.tsx
-import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
-// import { dataProvider } from './dataProvider';
+// import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
+import { Admin, Resource } from "react-admin";
+import { dataProvider } from './dataProvider';
+import { UserList } from "./users";
 
-import jsonServerProvider from 'ra-data-json-server';
-
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>
-+   <Resource name="users" list={ListGuesser} />
++    <Resource name="users" list={UserList} />
   </Admin>
 );
