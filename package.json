@@ -11,6 +11,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ra-data-fakerest": "^5.4.0",
     "ra-data-json-server": "^5.4.0",
     "react": "^18.3.0",
