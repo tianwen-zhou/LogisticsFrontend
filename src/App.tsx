@@ -2,7 +2,7 @@
 // import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
 import { Admin, Resource, ShowGuesser } from "react-admin";
 import { dataProvider } from './dataProvider';
-import { UserList } from "./users";
+import { DriverList } from "./drivers";
 import { PostList, PostEdit,PostCreate } from "./posts";
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
@@ -14,15 +14,8 @@ import { authProvider } from './authProvider';
 export const App = () => (
   <Admin authProvider={authProvider} dataProvider={dataProvider} dashboard={Dashboard} >
         <Resource
-            name="posts"
-            list={PostList}
-            edit={PostEdit}
-            create={PostCreate}
-            icon={PostIcon}
-        />
-        <Resource
-            name="users"
-            list={UserList}
+            name="Drivers"
+            list={DriverList}
             show={ShowGuesser}
             icon={UserIcon}
         />
