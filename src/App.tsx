@@ -2,7 +2,7 @@
 // import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
 import { Admin, Resource, ShowGuesser } from "react-admin";
 import { dataProvider } from './dataProvider';
-import { DriverList } from "./drivers";
+import { DriverList, DriverEdit } from "./drivers";
 import { PostList, PostEdit,PostCreate } from "./posts";
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
@@ -16,6 +16,8 @@ export const App = () => (
         <Resource
             name="Drivers"
             list={DriverList}
+            edit={DriverEdit} 
+            create={PostCreate} 
             show={ShowGuesser}
             icon={UserIcon}
         />

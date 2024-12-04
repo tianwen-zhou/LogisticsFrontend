@@ -1,6 +1,18 @@
 // in src/users.tsx
 import { useMediaQuery, Theme } from "@mui/material";
-import { List, SimpleList, Datagrid, TextField} from "react-admin";
+import {
+    List,
+    Datagrid,
+    TextField,
+    ReferenceField,
+    EditButton,
+    Edit,
+    SimpleForm,
+    ReferenceInput,
+    TextInput,
+    SimpleList,
+} from "react-admin";
+
 
 export const DriverList = () => {
     const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down("sm"));
@@ -25,3 +37,17 @@ export const DriverList = () => {
         </List>
     );
 };
+
+export const DriverEdit = () => (
+    <Edit>
+        <SimpleForm>
+            <ReferenceInput source="driverid" reference="Drivers" />
+            <TextInput source="id" />
+            <TextInput source="name" />
+            <TextInput source="phone" />
+            <TextInput source="gender" />
+            <TextInput source="licensePhoto" />
+            <TextInput source="companyName" />
+        </SimpleForm>
+    </Edit>
+);
