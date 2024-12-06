@@ -7,6 +7,7 @@ import {
     ReferenceField,
     EditButton,
     Edit,
+    Create,
     SimpleForm,
     ReferenceInput,
     TextInput,
@@ -51,3 +52,17 @@ export const DriverEdit = () => (
         </SimpleForm>
     </Edit>
 );
+
+export const DriverCreate = () => (
+      <Create>
+        <SimpleForm>
+            <ReferenceInput source="driverid" reference="Drivers" />
+            <TextInput source="id" />
+            <TextInput source="name" />
+            <TextInput source="phone" />
+            <TextInput source="gender" />
+            <TextInput source="licensePhoto" />
+            <TextInput source="companyName" />
+        </SimpleForm>
+      </Create>
+    );
