@@ -1,8 +1,8 @@
 // in src/App.tsx
 // import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
 import { Admin, Resource, ShowGuesser } from "react-admin";
-import { dataProvider } from './dataProvider';
-import { DriverList, DriverEdit } from "./drivers";
+import myDataProvider from "./dataProvider";
+import { DriverList, DriverEdit, DriverCreate } from "./drivers";
 import { PostList, PostEdit,PostCreate } from "./posts";
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
@@ -12,12 +12,12 @@ import { authProvider } from './authProvider';
 
 
 export const App = () => (
-  <Admin authProvider={authProvider} dataProvider={dataProvider} dashboard={Dashboard} >
+  <Admin authProvider={authProvider} dataProvider={myDataProvider} dashboard={Dashboard} >
         <Resource
             name="Drivers"
             list={DriverList}
             edit={DriverEdit} 
-            create={PostCreate} 
+            create={DriverCreate} 
             show={ShowGuesser}
             icon={UserIcon}
         />
