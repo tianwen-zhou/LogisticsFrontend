@@ -4,8 +4,6 @@ import {
     List,
     Datagrid,
     TextField,
-    ReferenceField,
-    EditButton,
     Edit,
     Create,
     SimpleForm,
