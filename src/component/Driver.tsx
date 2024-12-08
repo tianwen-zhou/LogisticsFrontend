@@ -7,7 +7,6 @@ import {
     Edit,
     Create,
     SimpleForm,
-    ReferenceInput,
     TextInput,
     SimpleList,
 } from "react-admin";
@@ -40,8 +39,7 @@ export const DriverList = () => {
 export const DriverEdit = () => (
     <Edit>
         <SimpleForm>
-            <ReferenceInput source="driverid" reference="Drivers" />
-            <TextInput source="id" />
+            <TextField source="id" />
             <TextInput source="name" />
             <TextInput source="phone" />
             <TextInput source="gender" />
@@ -54,8 +52,7 @@ export const DriverEdit = () => (
 export const DriverCreate = () => (
       <Create>
         <SimpleForm>
-            <ReferenceInput source="driverid" reference="Drivers" />
-            <TextInput source="id" />
+            <TextField source="id" />
             <TextInput source="name" />
             <TextInput source="phone" />
             <TextInput source="gender" />
