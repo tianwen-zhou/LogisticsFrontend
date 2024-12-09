@@ -1,4 +1,3 @@
-// in src/users.tsx
 import { useMediaQuery, Theme } from "@mui/material";
 import {
     List,
@@ -11,7 +10,7 @@ import {
     SimpleList,
 } from "react-admin";
 
-
+// List component
 export const WayBillList = () => {
     const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down("sm"));
     return (
@@ -36,12 +35,17 @@ export const WayBillList = () => {
                     <TextField source="routeCode" />
                     <TextField source="parcelValue" />
                     <TextField source="deliveryTime" />
+                    <TextField source="senderLatitude" label="Sender Latitude" />
+                    <TextField source="senderLongitude" label="Sender Longitude" />
+                    <TextField source="recipientLatitude" label="Recipient Latitude" />
+                    <TextField source="recipientLongitude" label="Recipient Longitude" />
                 </Datagrid>
             )}
         </List>
     );
 };
 
+// Edit component
 export const WayBillEdit = () => (
     <Edit>
         <SimpleForm>
@@ -57,12 +61,17 @@ export const WayBillEdit = () => (
             <TextInput source="routeCode" />
             <TextInput source="parcelValue" />
             <TextInput source="deliveryTime" />
+            <TextInput source="senderLatitude" label="Sender Latitude" />
+            <TextInput source="senderLongitude" label="Sender Longitude" />
+            <TextInput source="recipientLatitude" label="Recipient Latitude" />
+            <TextInput source="recipientLongitude" label="Recipient Longitude" />
         </SimpleForm>
     </Edit>
 );
 
+// Create component
 export const WayBillCreate = () => (
-      <Create>
+    <Create>
         <SimpleForm>
             <TextField source="id" />
             <TextInput source="waybillNumber" />
@@ -76,6 +85,10 @@ export const WayBillCreate = () => (
             <TextInput source="routeCode" />
             <TextInput source="parcelValue" />
             <TextInput source="deliveryTime" />
+            <TextInput source="senderLatitude" label="Sender Latitude" />
+            <TextInput source="senderLongitude" label="Sender Longitude" />
+            <TextInput source="recipientLatitude" label="Recipient Latitude" />
+            <TextInput source="recipientLongitude" label="Recipient Longitude" />
         </SimpleForm>
-      </Create>
-    );
+    </Create>
+);
