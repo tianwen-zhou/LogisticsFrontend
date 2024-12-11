@@ -1,37 +1,37 @@
 import { AuthProvider, HttpError } from "react-admin";
-import data from "./users.json";
 
-/**
- * This authProvider is only for test purposes. Don't use it in production.
- */
 export const authProvider: AuthProvider = {
-  // called when the user attempts to log in
-  login: ({ username }) => {
-      localStorage.setItem("username", username);
-      // accept all username/password combinations
-      return Promise.resolve();
-  },
-  // called when the user clicks on the logout button
-  logout: () => {
-      localStorage.removeItem("username");
-      return Promise.resolve();
-  },
-  // called when the API returns an error
-  checkError: ({ status }: { status: number }) => {
-      if (status === 401 || status === 403) {
-          localStorage.removeItem("username");
-          return Promise.reject();
-      }
-      return Promise.resolve();
-  },
-  // called when the user navigates to a new location, to check for authentication
-  checkAuth: () => {
-      return localStorage.getItem("username")
-          ? Promise.resolve()
-          : Promise.reject();
-  },
-  // called when the user navigates to a new location, to check for permissions / roles
-  getPermissions: () => Promise.resolve(),
+    // 登录函数
+    login: async ({ username, password }) => {
+        const request = new Request('http://localhost:5137/api/Auth/Login', {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify({ username, password }),
+        });
+
+        const response = await fetch(request);
+        if (!response.ok) {
+            throw new Error('Invalid credentials');
+        }
+
+        const { token } = await response.json();
+        // 保存登录令牌到本地存储
+        localStorage.setItem('authToken', token);
+    },
+
+    // 登出函数
+    logout: () => {
+        localStorage.removeItem('authToken');
+        return Promise.resolve();
+    },
+
+    // 验证登录状态
+    checkAuth: () => {
+        return localStorage.getItem('authToken') ? Promise.resolve() : Promise.reject();
+    },
+
+    // 获取权限（可扩展）
+    getPermissions: () => Promise.resolve(),
 };
 
 export default authProvider;
