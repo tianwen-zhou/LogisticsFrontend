@@ -11,16 +11,24 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@googlemaps/extended-component-library": "^0.6.13",
+    "@mui/material": "^5.16.11",
+    "@react-google-maps/api": "^2.20.3",
     "dotenv": "^16.4.5",
+    "leaflet": "^1.9.4",
     "ra-data-fakerest": "^5.4.0",
     "ra-data-json-server": "^5.4.0",
     "react": "^18.3.0",
-    "react-admin": "^5.4.0",
-    "react-dom": "^18.3.0"
+    "react-admin": "^5.4.2",
+    "react-dom": "^18.3.0",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.0",
+    "@types/google.maps": "^3.58.1",
     "@types/node": "^20.10.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

@@ -1,8 +1,10 @@
 // in src/App.tsx
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, CustomRoutes } from "react-admin";
+import { Route } from 'react-router-dom';
+import GoogleMapPage from './component/GoogleMapPage';
 import myDataProvider from "./dataProvider";
 import { DriverList, DriverEdit, DriverCreate } from "./component/Driver";
-import { WayBillList, WayBillEdit, WayBillCreate } from "./component/waybills";
+import { WayBillList, WayBillEdit, WayBillCreate } from "./component/WayBills";
 import { PostalAreaList, PostalAreaEdit, PostalAreaCreate } from "./component/PostalArea";
 import { DeliveryTaskEdit, DeliveryTaskCreate, DeliveryTaskList } from "./component/DeliveryTask";
 import { TaskWaybillList, TaskWaybillEdit, TaskWaybillCreate } from "./component/TaskWaybill";
@@ -13,9 +15,11 @@ import RouteIcon from "@mui/icons-material/AltRoute";
 import TaskIcon from "@mui/icons-material/Task";
 import { Dashboard } from './Dashboard';
 import { authProvider } from './authProvider';
+import MyMenu from './MyMenu';
+
 
 export const App = () => (
-  <Admin authProvider={authProvider} dataProvider={myDataProvider} dashboard={Dashboard}>
+  <Admin authProvider={authProvider} dataProvider={myDataProvider} dashboard={Dashboard}  menu={MyMenu}>
         {/* Drivers Resource */}
         <Resource
             name="Drivers"
@@ -69,5 +73,8 @@ export const App = () => (
             create={RoutePlanCreate}
             icon={RouteIcon}
         />
+        <CustomRoutes>
+            <Route path="/google-map" element={<GoogleMapPage />} />
+        </CustomRoutes>
   </Admin>
 );
