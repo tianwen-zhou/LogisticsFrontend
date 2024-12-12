@@ -18,6 +18,7 @@
     "@react-google-maps/api": "^2.20.3",
     "dotenv": "^16.4.5",
     "leaflet": "^1.9.4",
+    "leaflet-routing-machine": "^3.2.12",
     "ra-data-fakerest": "^5.4.0",
     "ra-data-json-server": "^5.4.0",
     "react": "^18.3.0",

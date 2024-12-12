@@ -26,6 +26,12 @@ export const MyMenu = (props: any) => {
                 primaryText="Google Map"
                 leftIcon={<MapIcon />}
             />
+
+            <MenuItemLink
+                to="/openstreetmap"
+                primaryText="Openstreet Map"
+                leftIcon={<MapIcon />}
+            />
         </Menu>
     );
 };
