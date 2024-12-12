@@ -2,6 +2,7 @@
 import { Admin, Resource, CustomRoutes } from "react-admin";
 import { Route } from 'react-router-dom';
 import GoogleMapPage from './component/GoogleMapPage';
+import OpenStreetMapPage from './component/OpenStreetMapPage';
 import myDataProvider from "./dataProvider";
 import { DriverList, DriverEdit, DriverCreate } from "./component/Driver";
 import { WayBillList, WayBillEdit, WayBillCreate } from "./component/WayBills";
@@ -75,6 +76,9 @@ export const App = () => (
         />
         <CustomRoutes>
             <Route path="/google-map" element={<GoogleMapPage />} />
+        </CustomRoutes>
+        <CustomRoutes>
+            <Route path="/openstreetmap" element={<OpenStreetMapPage />} />
         </CustomRoutes>
   </Admin>
 );
