@@ -15,11 +15,11 @@ import RouteIcon from "@mui/icons-material/AltRoute";
 import TaskIcon from "@mui/icons-material/Task";
 import { Dashboard } from './Dashboard';
 import { authProvider } from './authProvider';
-import MyMenu from './MyMenu';
+import { MyLayout } from './MyLayout';
 
 
-export const App = () => (
-  <Admin authProvider={authProvider} dataProvider={myDataProvider} dashboard={Dashboard}  menu={MyMenu}>
+export const App = () => (    
+  <Admin layout={MyLayout} authProvider={authProvider} dataProvider={myDataProvider} dashboard={Dashboard} >
         {/* Drivers Resource */}
         <Resource
             name="Drivers"

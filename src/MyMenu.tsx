@@ -1,21 +1,27 @@
 import React from 'react';
-import { Menu, useResourceDefinitions } from 'react-admin';
+import { Menu, MenuItemLink, useResourceDefinitions } from 'react-admin';
 import MapIcon from '@mui/icons-material/Map';
+import TaskIcon from "@mui/icons-material/Task";
 
-const MyMenu = (props: any) => {
+export const MyMenu = (props: any) => {
+    // 获取所有资源定义
     const resources = useResourceDefinitions();
 
     return (
         <Menu {...props}>
             <Menu.DashboardItem />
+            {/* 使用 resources 动态渲染资源菜单项 */}
             {Object.keys(resources).map(resource => (
-                <Menu.Item
+                <MenuItemLink
                     key={resource}
                     to={`/${resource}`}
                     primaryText={resources[resource].name}
+                    leftIcon={<TaskIcon />}
                 />
             ))}
-            <Menu.Item
+
+            {/* 固定的菜单项 */}
+            <MenuItemLink
                 to="/google-map"
                 primaryText="Google Map"
                 leftIcon={<MapIcon />}
@@ -23,5 +29,3 @@ const MyMenu = (props: any) => {
         </Menu>
     );
 };
-
-export default MyMenu;
