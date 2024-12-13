@@ -32,6 +32,8 @@ export const MyMenu = (props: any) => {
                 primaryText="Openstreet Map"
                 leftIcon={<MapIcon />}
             />
+            <MenuItemLink to="/tasks/123/map" primaryText="Task Map" leftIcon={<MapIcon />} />
+
         </Menu>
     );
 };
