@@ -3,6 +3,7 @@ import { Admin, Resource, CustomRoutes } from "react-admin";
 import { Route } from 'react-router-dom';
 import GoogleMapPage from './component/GoogleMapPage';
 import OpenStreetMapPage from './component/OpenStreetMapPage';
+import TaskMapPage from './component/TaskMapPage';
 import myDataProvider from "./dataProvider";
 import { DriverList, DriverEdit, DriverCreate } from "./component/Driver";
 import { WayBillList, WayBillEdit, WayBillCreate } from "./component/WayBills";
@@ -80,5 +81,9 @@ export const App = () => (
         <CustomRoutes>
             <Route path="/openstreetmap" element={<OpenStreetMapPage />} />
         </CustomRoutes>
+        <CustomRoutes>
+            <Route path="/tasks/:taskId/map" element={<TaskMapPage taskId="123" />} />
+        </CustomRoutes>
+
   </Admin>
 );
