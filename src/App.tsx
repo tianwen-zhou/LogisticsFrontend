@@ -75,15 +75,14 @@ export const App = () => (
             create={RoutePlanCreate}
             icon={RouteIcon}
         />
-        <CustomRoutes>
+        {/* <CustomRoutes>
             <Route path="/google-map" element={<GoogleMapPage />} />
         </CustomRoutes>
         <CustomRoutes>
             <Route path="/openstreetmap" element={<OpenStreetMapPage />} />
-        </CustomRoutes>
+        </CustomRoutes> */}
         <CustomRoutes>
-            <Route path="/tasks/:taskId/map" element={<TaskMapPage taskId="T001" />} />
+            <Route path="/tasks/map/:taskId" element={<TaskMapPage />} />
         </CustomRoutes>
-
   </Admin>
 );

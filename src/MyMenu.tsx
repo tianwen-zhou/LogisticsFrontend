@@ -21,7 +21,7 @@ export const MyMenu = (props: any) => {
             ))}
 
             {/* 固定的菜单项 */}
-            <MenuItemLink
+            {/* <MenuItemLink
                 to="/google-map"
                 primaryText="Google Map"
                 leftIcon={<MapIcon />}
@@ -31,8 +31,8 @@ export const MyMenu = (props: any) => {
                 to="/openstreetmap"
                 primaryText="Openstreet Map"
                 leftIcon={<MapIcon />}
-            />
-            <MenuItemLink to="/tasks/123/map" primaryText="Task Map" leftIcon={<MapIcon />} />
+            /> */}
+            <MenuItemLink to="/tasks/map/T001" primaryText="Task Map" leftIcon={<MapIcon />} />
 
         </Menu>
     );

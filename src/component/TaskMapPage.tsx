@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -37,7 +38,8 @@ const RoutingControl = ({ waypoints }: { waypoints: L.LatLng[] }) => {
   return null;
 };
 
-const TaskMapPage: React.FC<{ taskId: string }> = ({ taskId }) => {
+const TaskMapPage: React.FC = () => {
+  const { taskId } = useParams<{ taskId: string }>(); // 获取 taskId
   const [locations, setLocations] = useState<
     { id: number; name: string; lat: number; lng: number }[]
   >([]);
@@ -48,7 +50,7 @@ const TaskMapPage: React.FC<{ taskId: string }> = ({ taskId }) => {
   useEffect(() => {
     const loadTaskData = async () => {
       try {
-        const data = await fetchTaskData(taskId); // 模拟后端请求
+        const data = await fetchTaskData(taskId); //后端请求
         setLocations(data.locations);
       } catch (error) {
         console.error('Failed to fetch task data:', error);
