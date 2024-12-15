@@ -1,9 +1,8 @@
-import { mockTaskData } from "./mockTaskData";
-
 export const fetchTaskData = async (taskId: string) => {
     try {
-      return mockTaskData;
-      const response = await fetch(`/api/tasks/${taskId}`);
+      console.log(`/api/route/getTaskRoute/${taskId}`);
+      const response = await fetch(`http://localhost:5137/api/route/getTaskRoute/${taskId}`);
+      console.log('@response',response);
       if (!response.ok) {
         throw new Error(`Failed to fetch task data: ${response.status}`);
       }
