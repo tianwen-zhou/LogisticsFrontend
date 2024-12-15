@@ -82,7 +82,7 @@ export const App = () => (
             <Route path="/openstreetmap" element={<OpenStreetMapPage />} />
         </CustomRoutes>
         <CustomRoutes>
-            <Route path="/tasks/:taskId/map" element={<TaskMapPage taskId="123" />} />
+            <Route path="/tasks/:taskId/map" element={<TaskMapPage taskId="T001" />} />
         </CustomRoutes>
 
   </Admin>
