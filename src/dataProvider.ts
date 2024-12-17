@@ -7,7 +7,7 @@
 
 import { fetchUtils } from "react-admin";
 
-const apiUrl = "http://localhost:5137/api";
+const apiUrl = import.meta.env.VITE_JSON_SERVER_URL;
 const httpClient = fetchUtils.fetchJson;
 
 const myDataProvider = {
