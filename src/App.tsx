@@ -11,6 +11,7 @@ import { PostalAreaList, PostalAreaEdit, PostalAreaCreate } from "./component/Po
 import { DeliveryTaskEdit, DeliveryTaskCreate, DeliveryTaskList } from "./component/DeliveryTask";
 import { TaskWaybillList, TaskWaybillEdit, TaskWaybillCreate } from "./component/TaskWaybill";
 import { RoutePlanList, RoutePlanEdit, RoutePlanCreate } from "./component/RoutePlan";
+import  GenerateTaskWaybills  from "./component/GenerateTaskWaybills";
 import UserIcon from "@mui/icons-material/Group";
 import PostIcon from "@mui/icons-material/Book";
 import RouteIcon from "@mui/icons-material/AltRoute";
@@ -75,6 +76,9 @@ export const App = () => (
             create={RoutePlanCreate}
             icon={RouteIcon}
         />
+        <CustomRoutes>
+            <Route path="/generate-taskwaybills" element={<GenerateTaskWaybills />} />
+        </CustomRoutes>
         {/* <CustomRoutes>
             <Route path="/google-map" element={<GoogleMapPage />} />
         </CustomRoutes>
@@ -84,5 +88,6 @@ export const App = () => (
         <CustomRoutes>
             <Route path="/tasks/map/:taskId" element={<TaskMapPage />} />
         </CustomRoutes>
+
   </Admin>
 );
