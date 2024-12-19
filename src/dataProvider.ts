@@ -19,8 +19,8 @@ const myDataProvider = {
         const response = await httpClient(url);
 
         return {
-            data: response.json,
-            total: parseInt(response.headers.get("X-Total-Count"), 10),
+            data: response.json.data,
+            total: response.json.total,
         };
     },
     

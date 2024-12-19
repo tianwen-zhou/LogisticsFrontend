@@ -32,6 +32,7 @@ export const MyMenu = (props: any) => {
                 primaryText="Openstreet Map"
                 leftIcon={<MapIcon />}
             /> */}
+            <MenuItemLink to="/generate-taskwaybills" primaryText="Gen Task" leftIcon={<TaskIcon />} />
             <MenuItemLink to="/tasks/map/T001" primaryText="Task Map" leftIcon={<MapIcon />} />
 
         </Menu>
