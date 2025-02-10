@@ -36,6 +36,7 @@ const RoutingControl = ({ waypoints }: { waypoints: L.LatLng[] }) => {
   }, [map, waypoints]);
 
   return null;
+  
 };
 
 const TaskMapPage: React.FC = () => {
